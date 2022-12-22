@@ -2,8 +2,7 @@ import React, { useState } from "react";
 
 export default function Textform(props) {
     const [text, setText] = useState("");
-    // setText('enter lund here');
-    // console.log(text);
+   
     let changeToUppercase = () => {
         let y = text.toUpperCase();
         setText(y);
@@ -46,7 +45,7 @@ export default function Textform(props) {
 
             <div className="container my-3">
                 <h1>Your Text Summary</h1>
-                <p>{text.split(" ").length}word and {text.length} characters</p>
+                <p>{text[text.length-1] === " "? text.split(" ").length-1:text.split(" ").length}word and {text.length} characters</p>
                 <p>{0.008*text.split(" ").length +"Minutes To Read"}</p>
                 <h2>Preview</h2>
                 <p>{text.length>0?text:'Enter Text To Preview It Here'}</p>
